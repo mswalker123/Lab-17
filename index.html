@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel = "stylesheet" href="css/styles.css" />
+    <link type="css/bootstrap.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-route.js"></script>
+    <script src="js/module.js"></script>
+    <script src="js/redditCtrl.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <title>Rich Man Reddit</title>
+</head>
+
+<body ng-app = "richManReddit">
+  <h1>REDDIT</h1>
+
+  <div ng-controller="redditCtrl">
+      <div id = "blog-box">
+        <div ng-repeat="redditItem in redditItems | limitTo:10"/>
+
+<img src  = "{{redditItem.data.thumbnail}}"/>
+            <ul>
+
+              <li> title:  {{redditItem.data.title}} </li>
+              <li> author: {{redditItem.data.author}} </li>
+              </li>
+
+
+
+            </ul>
+        </div>
+      </div>
+  </div>
+
+
+<ng-view></ng-view>
+
+</body>
+
+</html>
