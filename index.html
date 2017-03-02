@@ -15,31 +15,33 @@
 
     <title>Rich Man Reddit</title>
 </head>
-
 <body ng-app = "richManReddit">
-  <h1>REDDIT</h1>
+  <div class = "container">
+    <div class = "row">
+      <div class = "col-md-2">
+      <h1>REDDIT</h1>
+      </div>
+          <div ng-controller="redditCtrl">
+        <div class="col-md-8">
+        <div class="content">
+          <div ng-repeat="redditItem in redditItems | limitTo:10"/>
 
-  <div ng-controller="redditCtrl">
-      <div id = "blog-box">
-        <div ng-repeat="redditItem in redditItems | limitTo:10"/>
-
-<img src  = "{{redditItem.data.thumbnail}}"/>
-            <ul>
-
-              <li> title:  {{redditItem.data.title}} </li>
-              <li> author: {{redditItem.data.author}} </li>
-              </li>
-
-
-
+            <ul><img src  = "{{redditItem.data.thumbnail}}"/>
+            <li> <strong>Title:</strong>  {{redditItem.data.title}} </br> <strong>Author:</strong> {{redditItem.data.author}} </li>
             </ul>
+            <hr>
+
+          </div>
         </div>
       </div>
+      <div class="col-md-2">
+          <br>
+      </div>
+      </div>
+    </div>
   </div>
-
 
 <ng-view></ng-view>
 
 </body>
-
 </html>
